@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tes
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   someFn: () => (/* binding */ someFn)\n/* harmony export */ });\nfunction someFn() {\n    console.log(\"Hello from test.ts\");\n}\n\n\n//# sourceURL=webpack://advanced-react/./src/test.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   someFn: () => (/* binding */ someFn)\n/* harmony export */ });\nfunction someFn() {\n    console.log(\"Hello from test.ts ts\");\n}\n\n\n//# sourceURL=webpack://advanced-react/./src/test.ts?");
 
 /***/ })
 
