@@ -1,0 +1,13 @@
+@import url("./reset.scss");
+@import url("./variables/global.scss");
+@import url("./themes/normale.scss");
+@import url("./themes/dark.scss");
+
+.app {
+    // max-width: 1200px;
+    min-height: 100vh;
+    // margin: 0 auto;
+    background-color: var(--bg-color);
+    color: var(--main-font-color);
+    font: var(--font-m);
+}
