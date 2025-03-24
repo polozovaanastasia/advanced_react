@@ -1,9 +1,13 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "es6",
+        "target": "esnext",
+        "module": "esnext",
         "moduleResolution": "node",
-        "baseUrl": ".",
+        "baseUrl": "./",
+        "paths": {
+            "@components/*": ["src/components/*"],
+            "@pages/*": ["src/pages/*"]
+        },
         "strict": true,
         "jsx": "react-jsx",
         "esModuleInterop": true,
