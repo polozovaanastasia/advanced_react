@@ -2,6 +2,7 @@ import { CounterPageLazy } from "@pages/counterPage/counterPage.lazy";
 import { MainPageLazy } from "@pages/mainPage/mainPage.lazy";
 import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
+import { classNames } from "./helpers/classNames/classNames";
 import { useTheme } from "./hooks/useTheme";
 import "./styles/index.scss";
 import { Theme } from "./theme/themeContext";
@@ -9,7 +10,7 @@ import { Theme } from "./theme/themeContext";
 function App() {
     const { theme, toggleTheme } = useTheme();
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames("app", {}, [theme])}>
             <Link to="/">Main</Link>
             <Link to="counter">Counter</Link>
             <br />
