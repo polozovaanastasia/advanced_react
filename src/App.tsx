@@ -1,29 +1,19 @@
 import { CounterPageLazy } from "@pages/counterPage/counterPage.lazy";
 import { MainPageLazy } from "@pages/mainPage/mainPage.lazy";
-import { Suspense, useContext } from "react";
+import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
+import { useTheme } from "./hooks/useTheme";
 import "./styles/index.scss";
-import {
-    LOCAL_STORAGE_THEME_KEY,
-    Theme,
-    ThemeContext,
-} from "./theme/themeContext";
+import { Theme } from "./theme/themeContext";
 
 function App() {
-    const { theme, setTheme } = useContext(ThemeContext);
-
-    const toggleThemes = () => {
-        const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-
-        setTheme(newTheme);
-        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
-    };
+    const { theme, toggleTheme } = useTheme();
     return (
         <div className={`app ${theme}`}>
             <Link to="/">Main</Link>
             <Link to="counter">Counter</Link>
             <br />
-            <button onClick={toggleThemes}>
+            <button onClick={toggleTheme}>
                 {theme === Theme.LIGHT
                     ? "Включить темную тему"
                     : "Включить светлую тему"}
