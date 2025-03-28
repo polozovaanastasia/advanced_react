@@ -1,10 +1,8 @@
-import { CounterPage } from "pages/counterPage";
-import { MainPage } from "pages/mainPage";
-import { Suspense } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useTheme } from "./providers/ThemeProvider";
-import { Theme } from "./providers/ThemeProvider/lib/themeContext";
+import { AppRouter } from "./providers/router";
+import { useTheme } from "./providers/theme";
+import { Theme } from "./providers/theme/lib/themeContext";
 import "./styles/index.scss";
 
 function App() {
@@ -19,12 +17,7 @@ function App() {
                     ? "Включить темную тему"
                     : "Включить светлую тему"}
             </button>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path={"/counter"} element={<CounterPage />}></Route>
-                </Routes>
-            </Suspense>
+            <AppRouter />
         </div>
     );
 }
