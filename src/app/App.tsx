@@ -1,11 +1,11 @@
-import { CounterPageLazy } from "@pages/counterPage/counterPage.lazy";
-import { MainPageLazy } from "@pages/mainPage/mainPage.lazy";
+import { CounterPage } from "pages/counterPage";
+import { MainPage } from "pages/mainPage";
 import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import { classNames } from "./helpers/classNames/classNames";
-import { useTheme } from "./hooks/useTheme";
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTheme } from "./providers/ThemeProvider";
+import { Theme } from "./providers/ThemeProvider/lib/themeContext";
 import "./styles/index.scss";
-import { Theme } from "./theme/themeContext";
 
 function App() {
     const { theme, toggleTheme } = useTheme();
@@ -21,11 +21,8 @@ function App() {
             </button>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path="/" element={<MainPageLazy />} />
-                    <Route
-                        path={"/counter"}
-                        element={<CounterPageLazy />}
-                    ></Route>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path={"/counter"} element={<CounterPage />}></Route>
                 </Routes>
             </Suspense>
         </div>

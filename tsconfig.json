@@ -3,11 +3,10 @@
         "target": "esnext",
         "module": "esnext",
         "moduleResolution": "node",
-        "baseUrl": "./",
+        "baseUrl": ".",
         "paths": {
-            "src/*": ["src/*"],
-            "@components/*": ["src/components/*"],
-            "@pages/*": ["src/pages/*"]
+            "*": ["./src/*"],
+            "app/*": ["src/app/*"]
         },
         "strict": true,
         "jsx": "react-jsx",

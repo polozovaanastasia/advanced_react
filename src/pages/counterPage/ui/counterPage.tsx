@@ -1,4 +1,4 @@
-import { Counter } from "@components/counter";
+import { Counter } from "./counter";
 
 function CounterPage() {
     return (
