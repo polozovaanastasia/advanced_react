@@ -1,7 +1,19 @@
 .counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px;
+    margin-top: 10px;
     background-color: gray;
+
+    button {
+        width: 50px;
+        cursor: pointer;
+    }
 }
 
-.green {
-    background-color: green;
+.title {
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    background-color: var(--bg-color);
 }

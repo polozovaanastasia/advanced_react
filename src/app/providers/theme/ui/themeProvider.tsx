@@ -12,7 +12,7 @@ type ThemeProviderType = {
 const defaultTheme =
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
-function ThemeProvider({ children }: ThemeProviderType) {
+const ThemeProvider = ({ children }: ThemeProviderType) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme);
 
     const defaultProps = useMemo(
@@ -24,6 +24,6 @@ function ThemeProvider({ children }: ThemeProviderType) {
             {children}
         </ThemeContext.Provider>
     );
-}
+};
 
 export default ThemeProvider;

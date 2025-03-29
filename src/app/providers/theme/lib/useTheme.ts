@@ -10,7 +10,7 @@ type UseThemeReturn = {
     toggleTheme: () => void;
 };
 
-export function useTheme(): UseThemeReturn {
+export const useTheme = (): UseThemeReturn => {
     const { theme, setTheme } = useContext(ThemeContext);
 
     const toggleTheme = () => {
@@ -21,4 +21,4 @@ export function useTheme(): UseThemeReturn {
     };
 
     return { theme, toggleTheme };
-}
+};
