@@ -1,9 +1,9 @@
+import { useMemo, useState } from "react";
 import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,
-    ThemeContext,
-} from "app/providers/theme/lib/themeContext";
-import { useMemo, useState } from "react";
+} from "shared/config/themeConfig/themeConfig";
+import { ThemeContext } from "../lib/themeContext";
 
 type ThemeProviderType = {
     children: React.ReactNode;

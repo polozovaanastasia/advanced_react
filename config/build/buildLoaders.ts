@@ -29,5 +29,10 @@ export function buildLoaders(
             "sass-loader",
         ],
     };
-    return [typescriptLoader, cssLoader];
+    const svgLoader = {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+    };
+    return [typescriptLoader, cssLoader, svgLoader];
 }

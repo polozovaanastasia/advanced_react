@@ -1,14 +1,5 @@
 import { createContext } from "react";
-
-export enum Theme {
-    DARK = "dark",
-    LIGHT = "light",
-}
-
-export type ThemeContextType = {
-    theme: Theme;
-    setTheme: (theme: Theme) => void;
-};
+import { Theme, ThemeContextType } from "shared/config/themeConfig/themeConfig";
 
 export const ThemeContext = createContext<ThemeContextType>({
     theme: Theme.LIGHT,
@@ -16,4 +7,3 @@ export const ThemeContext = createContext<ThemeContextType>({
         throw new Error("setTheme was called outside of ThemeProvider");
     },
 });
-export const LOCAL_STORAGE_THEME_KEY = "theme";

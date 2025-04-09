@@ -1,15 +1,15 @@
 import { Link, LinkProps } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
-import * as cls from "./AppLink.module.scss";
+import * as cls from "./UILink.module.scss";
 
-type AppLinkProps = LinkProps;
+type UILinkProps = LinkProps;
 
-export const AppLink = ({
+export const UILink = ({
     to,
     children,
     className,
     ...otherProps
-}: AppLinkProps) => {
+}: UILinkProps) => {
     return (
         <Link
             to={to}
