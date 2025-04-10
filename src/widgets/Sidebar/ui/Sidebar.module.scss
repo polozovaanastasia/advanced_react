@@ -1,4 +1,4 @@
-.navbar {
+.sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,6 +8,17 @@
     background-color: var(--main-color_primary);
     color: var(--main-font-color);
     border-radius: 0 10px 10px 0;
+    transition: width 0.5s;
+
+    &-btn {
+        flex-shrink: 0;
+        background-color: transparent;
+        transition: background-color 0.3s;
+        color: var(--main-font-color);
+        &:hover {
+            background-color: var(--button-color_hover-alpha);
+        }
+    }
 
     .title {
         padding: 15px 0 19px;
@@ -29,10 +40,33 @@
             }
         }
     }
+    .header {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+    }
     .footer {
         display: flex;
         justify-content: space-around;
         width: 100%;
         margin-top: auto;
+    }
+
+    &_collapsed {
+        width: 80px;
+
+        .sidebar-btn {
+            transition: none;
+        }
+
+        .header {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .links {
+            display: none;
+        }
     }
 }

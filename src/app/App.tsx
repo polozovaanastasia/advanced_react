@@ -5,7 +5,7 @@ import {
     UIButtonType,
 } from "shared/ui/UIButton/UIButton";
 import { UILink } from "shared/ui/UILink/UILink";
-import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
 import { AppRouter } from "./providers/router";
 import { useTheme } from "./providers/theme";
 import "./styles/index.scss";
@@ -14,7 +14,7 @@ const App = () => {
     const { theme } = useTheme();
     return (
         <div className={classNames("app", {}, [theme])}>
-            <Navbar />
+            <Sidebar />
             <div
                 className="main"
                 style={{ padding: "30px 15px", width: "100%" }}
