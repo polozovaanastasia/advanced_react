@@ -6,13 +6,15 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { UIButton, UIButtonType } from "shared/ui/UIButton/UIButton";
 import * as cls from "./ThemeSwitcher.module.scss";
 
-type ThemeSwitcherProps = {};
+type ThemeSwitcherProps = {
+    className?: string;
+};
 
-export const ThemeSwitcher = ({}: ThemeSwitcherProps) => {
+export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
     return (
         <UIButton
-            className={classNames(cls.themeSwitcher, {}, [])}
+            className={classNames(cls.themeSwitcher, {}, [className])}
             type={UIButtonType.ROUND}
             onClick={toggleTheme}
         >

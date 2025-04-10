@@ -4,7 +4,6 @@ import HamburgerIcon from "shared/assets/icons/HamburgerIcon.svg";
 import { classNames } from "shared/lib/classNames/classNames";
 import { UIButton, UIButtonType } from "shared/ui/UIButton/UIButton";
 import { UILink } from "shared/ui/UILink/UILink";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import * as cls from "./Sidebar.module.scss";
 
 type SidebarProps = {
@@ -55,9 +54,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     Counter
                 </UILink>
             </div>
-            <div className={cls.footer}>
-                <ThemeSwitcher />
-            </div>
+            <div className={cls.footer}></div>
         </div>
     );
 };

@@ -1,0 +1,11 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    padding: 0 15px;
+    background-color: var(--bg-color);
+
+    &__theme-switcher {
+        margin-left: auto;
+    }
+}
