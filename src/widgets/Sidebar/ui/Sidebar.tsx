@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import HamburgerIcon from "shared/assets/icons/HamburgerIcon.svg";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -11,13 +12,13 @@ type SidebarProps = {
 };
 
 export const Sidebar = ({ className }: SidebarProps) => {
+    const { t } = useTranslation(["main", "counter"]);
     const [collapsed, setCollapsed] = useState<boolean>(false);
     const location = useLocation();
 
     const onToggle = () => {
         setCollapsed((last) => !last);
     };
-
     return (
         <div
             className={classNames(
@@ -43,7 +44,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                         [cls.active]: location.pathname === "/",
                     })}
                 >
-                    Main
+                    {t("Главная страница", { ns: "main" })}
                 </UILink>
                 <UILink
                     to="/counter"
@@ -51,7 +52,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                         [cls.active]: location.pathname === "/counter",
                     })}
                 >
-                    Counter
+                    {t("Счетчик", { ns: "counter" })}
                 </UILink>
             </div>
             <div className={cls.footer}></div>

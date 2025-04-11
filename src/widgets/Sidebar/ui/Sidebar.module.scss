@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    width: 215px;
+    width: var(--sidebar-width);
     padding: 15px 10px;
     background-color: var(--main-color_primary);
     color: var(--font-color);
@@ -26,6 +26,7 @@
     }
     .links {
         align-self: stretch;
+        white-space: nowrap;
         padding: 10px 0;
 
         a {
@@ -53,7 +54,7 @@
     }
 
     &_collapsed {
-        width: 80px;
+        width: var(--sidebar-width_collapsed);
 
         .sidebar-btn {
             transition: none;

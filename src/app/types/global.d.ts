@@ -8,4 +8,6 @@ declare module "*.svg" {
     export default content;
 }
 
+declare const __IS_DEV__: boolean;
+
 // декларации типов для импортов
