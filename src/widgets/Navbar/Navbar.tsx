@@ -3,11 +3,13 @@ import { LangSwitcher } from "widgets/LangSwitcher/ui/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import * as cls from "./Navbar.module.scss";
 
-type NavbarProps = {};
+type NavbarProps = {
+    className?: string;
+};
 
-export const Navbar = ({}: NavbarProps) => {
+export const Navbar = ({ className }: NavbarProps) => {
     return (
-        <div className={classNames(cls.navbar, {}, [])}>
+        <div className={classNames(cls.navbar, {}, [className])}>
             <ThemeSwitcher className={cls["navbar__theme-switcher"]} />
             <LangSwitcher />
         </div>
