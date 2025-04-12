@@ -1,7 +1,7 @@
-@import url("./reset.scss");
-@import url("./variables/global.scss");
-@import url("./themes/normale.scss");
-@import url("./themes/dark.scss");
+@use "./reset";
+@use "./variables/global";
+@use "./themes/normale";
+@use "./themes/dark";
 
 .app {
     display: flex;
@@ -15,7 +15,6 @@
     display: flex;
     align-items: end;
     gap: 15px;
-
     padding: 20px 30px;
     margin: 50px 0;
     background-color: var(--font-color);

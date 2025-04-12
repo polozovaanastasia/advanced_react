@@ -13,7 +13,7 @@ export const UILink = ({
     return (
         <Link
             to={to}
-            className={classNames(cls["link"], {}, [className])}
+            className={classNames(cls["ui-link"], {}, [className])}
             {...otherProps}
         >
             {children}

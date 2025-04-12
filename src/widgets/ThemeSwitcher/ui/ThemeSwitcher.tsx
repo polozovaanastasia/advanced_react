@@ -14,7 +14,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
     return (
         <UIButton
-            className={classNames(cls.themeSwitcher, {}, [className])}
+            className={classNames(cls["theme-switcher"], {}, [className])}
             type={UIButtonType.ROUND}
             onClick={toggleTheme}
         >

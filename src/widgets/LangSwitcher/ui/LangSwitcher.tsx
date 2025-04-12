@@ -14,7 +14,6 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     const toggleLanguage = () => {
         changeLanguage(i18n.language === "ru" ? "en" : "ru");
     };
-    console.log(i18n.language);
     return (
         <UIButton
             className={classNames(cls["lang-switcher"], {}, [className])}

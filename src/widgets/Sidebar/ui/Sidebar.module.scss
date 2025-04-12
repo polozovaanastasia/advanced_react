@@ -15,6 +15,7 @@
         background-color: transparent;
         transition: background-color 0.3s;
         color: var(--font-color);
+
         &:hover {
             background-color: var(--button-color_hover-alpha);
         }
@@ -24,6 +25,7 @@
         padding: 15px 0 19px;
         font-size: var(--font-size-m);
     }
+
     .links {
         align-self: stretch;
         white-space: nowrap;
@@ -41,11 +43,13 @@
             }
         }
     }
+
     .header {
         display: flex;
         gap: 8px;
         width: 100%;
     }
+
     .footer {
         display: flex;
         justify-content: space-around;

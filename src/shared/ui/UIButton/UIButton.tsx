@@ -28,7 +28,7 @@ export const UIButton = ({
     children,
     onClick,
 }: UIButtonProps) => {
-    const UIButtonClasses = classNames(cls.UIButton, {}, [
+    const UIButtonClasses = classNames(cls["ui-button"], {}, [
         className,
         cls[`type-${type}`],
         cls[`size-${size}`],
