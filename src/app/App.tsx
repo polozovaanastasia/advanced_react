@@ -32,13 +32,13 @@ const App = () => {
                         <AppRouter />
                         <div className="buttons-area">
                             <UIButton onClick={() => {}} size={UIButtonSize.S}>
-                                {t("Сохранить")}
+                                {t("translation:save")}
                             </UIButton>
                             <UIButton onClick={() => {}}>
-                                {t("Сохранить")}
+                                {t("translation:save")}
                             </UIButton>
                             <UIButton onClick={() => {}} size={UIButtonSize.LG}>
-                                {t("Сохранить")}
+                                {t("translation:save")}
                             </UIButton>
 
                             <UIButton
@@ -46,20 +46,20 @@ const App = () => {
                                 type={UIButtonType.OUTLINE}
                                 size={UIButtonSize.S}
                             >
-                                {t("Сохранить")}
+                                {t("translation:save")}
                             </UIButton>
                             <UIButton
                                 onClick={() => {}}
                                 type={UIButtonType.OUTLINE}
                             >
-                                {t("Сохранить")}
+                                {t("translation:save")}
                             </UIButton>
                             <UIButton
                                 onClick={() => {}}
                                 type={UIButtonType.OUTLINE}
                                 size={UIButtonSize.LG}
                             >
-                                {t("Сохранить")}
+                                {t("translation:save")}
                             </UIButton>
                         </div>
                     </div>

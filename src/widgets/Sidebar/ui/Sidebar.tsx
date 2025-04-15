@@ -44,7 +44,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                         [cls.active]: location.pathname === "/",
                     })}
                 >
-                    {t("Главная страница", { ns: "main" })}
+                    {t("main:mainPage")}
                 </UILink>
                 <UILink
                     to="/counter"
@@ -52,7 +52,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                         [cls.active]: location.pathname === "/counter",
                     })}
                 >
-                    {t("Счетчик", { ns: "counter" })}
+                    {t("counter:counter")}
                 </UILink>
             </div>
             <div className={cls.footer}></div>

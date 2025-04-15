@@ -1,5 +1,4 @@
 {
-    "Test": "Test",
-    "Сохранить": "Save",
-    "Язык для переключения": "RU"
+    "save": "Save",
+    "languageSwitcher": "RU"
 }

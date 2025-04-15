@@ -20,7 +20,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
             type={UIButtonType.ROUND}
             onClick={toggleLanguage}
         >
-            {t("Язык для переключения")}
+            {t("translation:languageSwitcher")}
         </UIButton>
     );
 };

@@ -5,7 +5,7 @@ const CounterPage = () => {
     const { t } = useTranslation("counter");
     return (
         <>
-            <h1>{t("Счетчик")}</h1>
+            <h1>{t("counter:counter")}</h1>
             <Counter />
         </>
     );
