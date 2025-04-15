@@ -1,3 +1,3 @@
-import { CounterPageLazy } from "./ui/counterPage.lazy";
+import { CounterPageLazy } from "./ui/CounterPage.lazy";
 
 export { CounterPageLazy as CounterPage };

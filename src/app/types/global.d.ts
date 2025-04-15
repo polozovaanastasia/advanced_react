@@ -8,6 +8,9 @@ declare module "*.svg" {
     export default content;
 }
 
-declare const __IS_DEV__: boolean;
+declare module "*.mp4" {
+    const src: string;
+    export default src;
+}
 
-// декларации типов для импортов
+declare const __IS_DEV__: boolean;

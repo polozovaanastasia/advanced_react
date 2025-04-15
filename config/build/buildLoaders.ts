@@ -32,7 +32,13 @@ export function buildLoaders(
     const svgLoader = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
-        use: ['@svgr/webpack'],
+        use: ["@svgr/webpack"],
     };
-    return [typescriptLoader, cssLoader, svgLoader];
+
+    const videoLoader = {
+        test: /\.(mp4|webm|ogg)$/i,
+        type: "asset/resource",
+    };
+
+    return [typescriptLoader, cssLoader, svgLoader, videoLoader];
 }
