@@ -12,7 +12,9 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggleLanguage = () => {
-        changeLanguage(i18n.language === "ru" ? "en" : "ru");
+        const newLang = i18n.language === "ru" ? "en" : "ru";
+        changeLanguage(newLang);
+        localStorage.setItem("lang", newLang);
     };
     return (
         <UIButton
