@@ -1,5 +1,12 @@
 {
-    "save": "Save",
-    "languageSwitcher": "RU",
-    "NotFoundPage": "404. Page not found."
+  "save": "Save",
+  "languageSwitcher": "RU",
+  "notFoundPage": "404. Page not found.",
+  "unexpectedError": "An unexpected error occurred.",
+  "reloadPage": "Reload page",
+  "updatePage": "",
+  "bugButton": "Throw Error",
+  "translate": {
+    "bugButton": ""
+  }
 }
