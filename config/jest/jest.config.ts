@@ -35,8 +35,9 @@ const config: Config = {
         "^.+\\.(ts|tsx)$": "ts-jest",
     },
     moduleNameMapper: {
-        "\\.(css|less|scss|sass)$": "identity-obj-proxy", // если у тебя есть импорты стилей
+        "\\.(css|less|scss|sass)$": "identity-obj-proxy",
     },
+    modulePaths: ["<rootDir>/src"],
     rootDir: "../../",
     testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
 
