@@ -35,11 +35,15 @@ const config: Config = {
         "^.+\\.(ts|tsx)$": "ts-jest",
     },
     moduleNameMapper: {
-        "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+        // "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+        "\\.module\\.(css|scss)$":
+            "<rootDir>/config/jest/__mocks__/styleMock.ts",
     },
+
     modulePaths: ["<rootDir>/src"],
     rootDir: "../../",
     testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+    setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
