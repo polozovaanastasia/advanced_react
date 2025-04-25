@@ -3,8 +3,7 @@ import { lazy } from "react";
 export const CounterPageLazy = lazy(
     () =>
         new Promise((resolve) => {
-            // @ts-ignore
-            // чтобы видеть лоадер
+            // @ts-expect-error - временно, чтобы видеть лоадер.
             setTimeout(() => resolve(import("./CounterPage")), 1500);
         })
 );

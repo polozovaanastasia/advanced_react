@@ -1,6 +1,8 @@
 import React, { ErrorInfo, Suspense } from "react";
 import { PageError } from "widgets/PageError";
 
+/* eslint-disable no-console */
+
 type ErrorBoundaryProps = {
     children: React.ReactNode;
 };
