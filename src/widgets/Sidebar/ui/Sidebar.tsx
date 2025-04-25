@@ -21,6 +21,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     };
     return (
         <div
+            data-testid="sidebar"
             className={classNames(
                 cls.sidebar,
                 { [cls["sidebar_collapsed"]]: collapsed },
@@ -29,6 +30,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         >
             <div className={cls["header"]}>
                 <UIButton
+                    data-testid="sidebar-toggle"
                     className={cls["sidebar-btn"]}
                     type={UIButtonType.ROUND}
                     onClick={onToggle}
