@@ -12,10 +12,10 @@ const meta = {
     },
     tags: ["autodocs"],
     argTypes: {
-        type: {
-            control: "select",
-            options: Object.values(UIButtonType),
-        },
+        // type: {
+        //     control: "select",
+        //     options: Object.values(UIButtonType),
+        // },
         size: {
             control: "select",
             options: Object.values(UIButtonSize),
@@ -30,32 +30,23 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-
 export const Primary: Story = {
     args: {
         type: UIButtonType.PRIMARY,
-        size: UIButtonSize.MD,
-        children: "Primary Button",
+        children: "Primary",
     },
 };
 
-// export const Secondary: Story = {
-//     args: {
-//         label: "Button",
-//     },
-// };
+export const Outline: Story = {
+    args: {
+        type: UIButtonType.OUTLINE,
+        children: "Outline",
+    },
+};
 
-// export const Large: Story = {
-//     args: {
-//         size: "large",
-//         label: "Button",
-//     },
-// };
-
-// export const Small: Story = {
-//     args: {
-//         size: "small",
-//         label: "Button",
-//     },
-// };
+export const Round: Story = {
+    args: {
+        type: UIButtonType.ROUND,
+        children: "RD",
+    },
+};

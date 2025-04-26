@@ -1,18 +1,19 @@
-// .app.light {
-:root {
+.app.light {
     --bg-color: #fdfdfd;
     --bg-color_inverted: #252525;
     --main-color_primary: #28626b;
     --main-color_secondary: #467c85;
     --accent-color: #f15a3b;
+    --aria-color: #191919;
 
     /* Font color */
     --font-color: #191919;
     --font-color_inverted: #fdfdfd;
 
     /* UIButton */
-    --button-color: #365b61;
-    --button-color_hover: #40808a;
-    --button-color_hover-alpha: rgb(64 128 138 / 50%);
-    --button-color_active: #183a40;
+    --button-color: #252525;
+    --button_outline-color: #fdfdfd;
+    --button-color_hover: #363636;
+    --button-color_hover-alpha: rgb(54 54 54 / 50%);
+    --button-color_active: #191919;
 }
