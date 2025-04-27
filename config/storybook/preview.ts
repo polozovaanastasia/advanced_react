@@ -1,7 +1,8 @@
 import type { Preview } from "@storybook/react";
-import { LangDecorator } from "shared/config/storybook/LangDecorator/LangDecorator";
-import { StyleDecorator } from "shared/config/storybook/StyleDecorator/StyleDecorator";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { LangDecorator } from "shared/config/storybook/decorators/LangDecorator/LangDecorator";
+import { StyleDecorator } from "shared/config/storybook/decorators/StyleDecorator/StyleDecorator";
+import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator";
+import { globalTypes } from "shared/config/storybook/globals/globalTypes";
 import { Theme } from "shared/config/themeConfig/themeConfig";
 
 const preview: Preview = {
@@ -13,11 +14,8 @@ const preview: Preview = {
             },
         },
     },
-    decorators: [
-        StyleDecorator,
-        ThemeDecorator(Theme.LIGHT),
-        LangDecorator("en"),
-    ],
+    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), LangDecorator],
+    globalTypes,
 };
 
 export default preview;
