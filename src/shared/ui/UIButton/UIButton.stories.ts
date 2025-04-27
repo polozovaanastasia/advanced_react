@@ -2,8 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { UIButton, UIButtonSize, UIButtonType } from "./UIButton";
 
-import "../../../app/styles/index.scss";
-
 const meta = {
     title: "shared/UIButton",
     component: UIButton,

@@ -1,5 +1,6 @@
 import webpack from "webpack";
 import { getCssLoader } from "./loaders/getCssLoader";
+import { getSvgLoader } from "./loaders/getSvgLoader";
 import { BuildOptions } from "./types/config";
 
 export function buildLoaders(
@@ -11,11 +12,7 @@ export function buildLoaders(
         exclude: /node_modules/,
     };
     const cssLoader = getCssLoader(options.isDev);
-    const svgLoader = {
-        test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
-        use: ["@svgr/webpack"],
-    };
+    const svgLoader = getSvgLoader();
 
     const videoLoader = {
         test: /\.(mp4|webm|ogg)$/i,
