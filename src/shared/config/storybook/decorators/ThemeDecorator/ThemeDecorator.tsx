@@ -6,7 +6,7 @@ export const ThemeDecorator: Decorator = (Story, context) => {
     const theme = context.globals.theme === "dark" ? Theme.DARK : Theme.LIGHT;
 
     return (
-        <ThemeProvider>
+        <ThemeProvider initialTheme={theme}>
             <div className={`app ${theme}`} style={{ width: "100vw" }}>
                 <Story />
             </div>
