@@ -1,12 +1,15 @@
-/* eslint-disable react/display-name */
-
 import { Decorator } from "@storybook/react";
+import { ThemeProvider } from "app/providers/theme";
 import { Theme } from "shared/config/themeConfig/themeConfig";
 
-export const ThemeDecorator =
-    (theme: Theme): Decorator =>
-    (Story) => (
-        <div className={`app ${theme}`} style={{ width: "100vw" }}>
-            <Story />
-        </div>
+export const ThemeDecorator: Decorator = (Story, context) => {
+    const theme = context.globals.theme === "dark" ? Theme.DARK : Theme.LIGHT;
+
+    return (
+        <ThemeProvider>
+            <div className={`app ${theme}`} style={{ width: "100vw" }}>
+                <Story />
+            </div>
+        </ThemeProvider>
     );
+};

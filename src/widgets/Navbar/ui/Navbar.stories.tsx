@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/config/themeConfig/themeConfig";
 import { Navbar } from "./Navbar";
 
 const meta = {
@@ -18,11 +16,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
-    args: {},
-};
-
-export const Dark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK)],
+export const Default: Story = {
     args: {},
 };

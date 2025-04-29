@@ -3,7 +3,6 @@ import { LangDecorator } from "shared/config/storybook/decorators/LangDecorator/
 import { StyleDecorator } from "shared/config/storybook/decorators/StyleDecorator/StyleDecorator";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator";
 import { globalTypes } from "shared/config/storybook/globals/globalTypes";
-import { Theme } from "shared/config/themeConfig/themeConfig";
 
 const preview: Preview = {
     parameters: {
@@ -14,7 +13,7 @@ const preview: Preview = {
             },
         },
     },
-    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), LangDecorator],
+    decorators: [StyleDecorator, ThemeDecorator, LangDecorator],
     globalTypes,
 };
 
