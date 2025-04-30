@@ -10,11 +10,13 @@ type ThemeProviderType = {
     children: React.ReactNode;
 };
 
-const defaultTheme =
-    (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
-
 const ThemeProvider = ({ initialTheme, children }: ThemeProviderType) => {
-    const [theme, setTheme] = useState<Theme>(defaultTheme || initialTheme);
+    const defaultTheme =
+        initialTheme ??
+        (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ??
+        Theme.LIGHT;
+
+    const [theme, setTheme] = useState<Theme>(defaultTheme);
 
     useEffect(() => {
         if (initialTheme) {

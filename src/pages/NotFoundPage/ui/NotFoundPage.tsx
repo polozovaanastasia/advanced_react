@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import video from "shared/assets/video/leo.mp4";
 import { classNames } from "shared/lib/classNames/classNames";
-import * as cls from "./notFoundPage.module.scss";
+import * as cls from "./NotFoundPage.module.scss";
 
 export const NotFoundPage = () => {
     const { t } = useTranslation();

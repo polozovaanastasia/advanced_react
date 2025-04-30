@@ -9,7 +9,7 @@ import {
 const MainPage = () => {
     const { t } = useTranslation("main");
     return (
-        <>
+        <div>
             <h1>{t("main:mainPage")}</h1>
             <h2>{t("main:welcome")}</h2>
 
@@ -44,7 +44,7 @@ const MainPage = () => {
                     {t("translation:save")}
                 </UIButton>
             </div>
-        </>
+        </div>
     );
 };
 
