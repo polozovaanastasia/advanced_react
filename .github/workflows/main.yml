@@ -20,14 +20,6 @@ jobs:
                   node-version: ${{ matrix.node }}
             - name: install modules
               run: npm install
-            - name: build production project
-              run: npm run build:prod
-            - name: linting typescript
-              run: npm run lint:ts
-            - name: linting css
-              run: npm run lint:scss
-            - name: unit testing
-              run: npm run test:unit
             - name: Check if the file exists
               run: |
                   ls src/pages/CounterPage
@@ -41,3 +33,12 @@ jobs:
               run: npm -v
             - name: List installed packages
               run: npm ls
+
+            - name: build production project
+              run: npm run build:prod
+            - name: linting typescript
+              run: npm run lint:ts
+            - name: linting css
+              run: npm run lint:scss
+            - name: unit testing
+              run: npm run test:unit
