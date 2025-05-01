@@ -1,7 +1,7 @@
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
+import { CounterPage } from "pages/СounterPage";
 import { RouteProps } from "react-router-dom";
-import { CounterPage } from "../../../pages/CounterPage";
 
 export enum AppRoutes {
     MAIN = "main",
