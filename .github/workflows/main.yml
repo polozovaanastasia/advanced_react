@@ -20,20 +20,6 @@ jobs:
                   node-version: ${{ matrix.node }}
             - name: install modules
               run: npm install
-            - name: Check if the file exists
-              run: |
-                  ls src/pages/CounterPage
-            - name: List project files
-              run: |
-                  echo "Listing all project files:"
-                  ls -R
-            - name: Check node version
-              run: node -v
-            - name: Check npm version
-              run: npm -v
-            - name: List installed packages
-              run: npm ls
-
             - name: build production project
               run: npm run build:prod
             - name: linting typescript
