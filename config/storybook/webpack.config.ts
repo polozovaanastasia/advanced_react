@@ -8,6 +8,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
         entry: "",
         build: "",
+        public: "",
         html: "",
         src: path.resolve(__dirname, "..", "..", "src"),
     };
