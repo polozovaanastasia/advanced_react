@@ -12,10 +12,10 @@
         "lint:ts:fix": "tsx node_modules/eslint/bin/eslint.js --fix",
         "lint:scss": "tsx node_modules/stylelint/bin/stylelint.mjs \"**/*.scss\"",
         "lint:scss:fix": "tsx node_modules/stylelint/bin/stylelint.mjs \"**/*.scss\" --fix",
-        "unit": "jest --config ./config/jest/jest.config.ts",
+        "test:unit": "jest --config ./config/jest/jest.config.ts",
+        "test:ui": "npx chromatic --project-token=chpt_32fd0d5973e24d9",
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
-        "build-storybook": "storybook build -c ./config/storybook",
-        "chromatic": "npx chromatic --project-token=chpt_32fd0d5973e24d9"
+        "storybook:build": "storybook build -c ./config/storybook"
     },
     "keywords": [],
     "author": "",
