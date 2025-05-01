@@ -5,6 +5,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "build": "npm run build:prod",
         "build:dev": "tsx node_modules/webpack/bin/webpack.js --config webpack.config.ts --env mode=development",
         "build:prod": "tsx node_modules/webpack/bin/webpack.js --config webpack.config.ts --env mode=production",
         "start": "tsx node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.ts",
