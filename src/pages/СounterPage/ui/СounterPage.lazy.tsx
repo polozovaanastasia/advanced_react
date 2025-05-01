@@ -4,6 +4,6 @@ export const CounterPageLazy = lazy(
     () =>
         new Promise((resolve) => {
             // @ts-expect-error - временно, чтобы видеть лоадер.
-            setTimeout(() => resolve(import("./CounterPage")), 1500);
+            setTimeout(() => resolve(import("./СounterPage")), 1500);
         })
 );
