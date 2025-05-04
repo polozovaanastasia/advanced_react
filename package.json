@@ -14,7 +14,8 @@
         "lint:scss": "tsx node_modules/stylelint/bin/stylelint.mjs \"**/*.scss\"",
         "lint:scss:fix": "tsx node_modules/stylelint/bin/stylelint.mjs \"**/*.scss\" --fix",
         "test:unit": "jest --config ./config/jest/jest.config.ts",
-        "test:ui": "npx chromatic --project-token=chpt_32fd0d5973e24d9",
+        "test:ui": "npx chromatic --project-token=chpt_32fd0d5973e24d9 --build-script-name=storybook:build",
+        "test:ui:ci": "npx chromatic --project-token=chpt_32fd0d5973e24d9 --build-script-name=storybook:build --exit-on-changes",
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
         "storybook:build": "storybook build -c ./config/storybook"
     },
