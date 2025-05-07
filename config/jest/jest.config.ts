@@ -24,6 +24,7 @@ const config: Config = {
         "\\.module\\.(css|scss)$":
             "<rootDir>/config/jest/__mocks__/styleMock.ts",
         "\\.svg$": "<rootDir>/config/jest/__mocks__/emptyComponent.tsx",
+        "\\.(mp4|mp3|webm)$": "<rootDir>/config/jest/__mocks__/fileMock.ts",
     },
 
     modulePaths: ["<rootDir>/src"],
