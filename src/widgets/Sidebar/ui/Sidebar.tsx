@@ -49,7 +49,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
                         [cls.active]: location.pathname === RoutePath.main,
                     })}
                 >
-                    {collapsed ? <HomeIcon /> : t("main:mainPage")}
+                    <HomeIcon />
+                    {t("main:mainPage")}
                 </UILink>
                 <UILink
                     to={RoutePath.counter}
@@ -57,7 +58,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
                         [cls.active]: location.pathname === RoutePath.counter,
                     })}
                 >
-                    {collapsed ? <CounterIcon /> : t("counter:counter")}
+                    <CounterIcon />
+                    {t("counter:counter")}
                 </UILink>
             </div>
             <div className={cls.footer}></div>
