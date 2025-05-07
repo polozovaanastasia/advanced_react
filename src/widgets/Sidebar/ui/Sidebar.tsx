@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import CounterIcon from "shared/assets/icons/CounterIcon.svg";
 import HamburgerIcon from "shared/assets/icons/HamburgerIcon.svg";
+import HomeIcon from "shared/assets/icons/HomeIcon.svg";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import { UIButton, UIButtonType } from "shared/ui/UIButton/UIButton";
 import { UILink } from "shared/ui/UILink/UILink";
@@ -41,20 +44,20 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </div>
             <div className={cls.links}>
                 <UILink
-                    to="/"
+                    to={RoutePath.main}
                     className={classNames("sidebar__link", {
-                        [cls.active]: location.pathname === "/",
+                        [cls.active]: location.pathname === RoutePath.main,
                     })}
                 >
-                    {t("main:mainPage")}
+                    {collapsed ? <HomeIcon /> : t("main:mainPage")}
                 </UILink>
                 <UILink
-                    to="/counter"
+                    to={RoutePath.counter}
                     className={classNames("sidebar__link", {
-                        [cls.active]: location.pathname === "/counter",
+                        [cls.active]: location.pathname === RoutePath.counter,
                     })}
                 >
-                    {t("counter:counter")}
+                    {collapsed ? <CounterIcon /> : t("counter:counter")}
                 </UILink>
             </div>
             <div className={cls.footer}></div>
