@@ -5,6 +5,8 @@ export enum UIButtonType {
     PRIMARY = "primary",
     OUTLINE = "outline",
     ROUND = "round",
+    ROUND_INVERTED = "round_inverted",
+    ICON = "icon",
 }
 
 export enum UIButtonSize {

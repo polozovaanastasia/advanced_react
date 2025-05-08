@@ -8,6 +8,7 @@ export const ThemeDecorator: Decorator = (Story, context) => {
         <ThemeProvider initialTheme={theme}>
             <div className={`app ${theme}`} style={{ width: "100vw" }}>
                 <Story />
+                <div id="modal-root" />
             </div>
         </ThemeProvider>
     );

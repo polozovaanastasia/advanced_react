@@ -25,6 +25,7 @@ const App = () => {
                         <AppRouter />
                     </div>
                 </div>
+                <div id="modal-root"></div>
             </div>
         </Suspense>
     );

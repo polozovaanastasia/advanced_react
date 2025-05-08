@@ -48,3 +48,10 @@ export const Round: Story = {
         children: "RD",
     },
 };
+
+export const RoundInverted: Story = {
+    args: {
+        type: UIButtonType.ROUND_INVERTED,
+        children: "RD",
+    },
+};

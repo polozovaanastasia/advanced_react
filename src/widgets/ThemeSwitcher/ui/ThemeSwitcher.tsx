@@ -15,7 +15,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     return (
         <UIButton
             className={classNames(cls["theme-switcher"], {}, [className])}
-            type={UIButtonType.ROUND}
+            type={UIButtonType.ROUND_INVERTED}
             onClick={toggleTheme}
         >
             {theme === Theme.LIGHT ? <DarkThemeIcon /> : <LightThemeIcon />}
