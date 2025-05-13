@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import CounterIcon from "shared/assets/icons/CounterIcon.svg";
 import HamburgerIcon from "shared/assets/icons/HamburgerIcon.svg";
 import HomeIcon from "shared/assets/icons/HomeIcon.svg";
+import IdCardIcon from "shared/assets/icons/IdCardIcon.svg";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import { UIButton, UIButtonType } from "shared/ui/UIButton/UIButton";
@@ -15,7 +16,7 @@ type SidebarProps = {
 };
 
 export const Sidebar = ({ className }: SidebarProps) => {
-    const { t } = useTranslation(["main", "counter"]);
+    const { t } = useTranslation(["main", "about", "counter"]);
     const [collapsed, setCollapsed] = useState<boolean>(false);
     const location = useLocation();
 
@@ -51,6 +52,15 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 >
                     <HomeIcon />
                     {t("main:mainPage")}
+                </UILink>
+                <UILink
+                    to={RoutePath.about}
+                    className={classNames("sidebar__link", {
+                        [cls.active]: location.pathname === RoutePath.about,
+                    })}
+                >
+                    <IdCardIcon />
+                    {t("about:aboutUs")}
                 </UILink>
                 <UILink
                     to={RoutePath.counter}
