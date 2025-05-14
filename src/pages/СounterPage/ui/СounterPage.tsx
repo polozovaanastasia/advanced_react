@@ -1,5 +1,5 @@
+import { Counter } from "entities/Counter";
 import { useTranslation } from "react-i18next";
-import { Counter } from "./counter";
 
 const CounterPage = () => {
     const { t } = useTranslation("counter");

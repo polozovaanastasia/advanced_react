@@ -6,9 +6,9 @@
     margin-top: 10px;
     background-color: gray;
 
-    button {
-        width: 50px;
-        cursor: pointer;
+    & .buttons-area {
+        display: flex;
+        gap: 10px;
     }
 }
 
