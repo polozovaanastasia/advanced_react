@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { UIButton } from "shared/ui/UIButton/UIButton";
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
-import { counterActions } from "../model/slice/CounterSlice";
+import { counterActions } from "../model/slice/counterSlice";
 import * as cls from "./Counter.module.scss";
 
 export const Counter = () => {
@@ -16,14 +16,19 @@ export const Counter = () => {
     };
 
     return (
-        <div className={cls.counter}>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
-            <h1 className={cls.title}>value = {counterValue}</h1>
+        <div data-testid="counter" className={cls.counter}>
+            <h1 data-testid="counter-title" className={cls.title}>
+                {counterValue}
+            </h1>
             <div className={cls["buttons-area"]}>
                 {/* eslint-disable-next-line i18next/no-literal-string */}
-                <UIButton onClick={increment}>increment</UIButton>
+                <UIButton data-testid="increment-btn" onClick={increment}>
+                    increment
+                </UIButton>
                 {/* eslint-disable-next-line i18next/no-literal-string */}
-                <UIButton onClick={decrement}>decrement</UIButton>
+                <UIButton data-testid="decrement-btn" onClick={decrement}>
+                    decrement
+                </UIButton>
             </div>
         </div>
     );
