@@ -6,7 +6,5 @@
   "reloadPage": "Reload page",
   "updatePage": "",
   "bugButton": "Throw Error",
-  "translate": {
-    "bugButton": ""
-  }
+  "signIn": "Sign In"
 }

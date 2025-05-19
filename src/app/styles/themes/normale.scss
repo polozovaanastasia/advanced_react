@@ -16,7 +16,19 @@
     --button-color_hover: #363636;
     --button-color_hover-alpha: rgb(54 54 54 / 50%);
     --button-color_active: #191919;
+    --button-background_disabled: rgb(114 114 114);
+    --button-color_disabled: rgb(189 184 184);
 
     /* UIModal */
     --overlay-background: rgb(24 24 25 / 60%);
+
+    /* UIInput */
+    --input-background: #252525;
+    --input-background_focus: #fdfdfd;
+    --input-color: #717171;
+    --input-color_focus: #252525;
+    --input-border-color: #252525;
+    --input-border-color_focus: red;
+    --input-background_disabled: red;
+    --input-color_disabled: green;
 }

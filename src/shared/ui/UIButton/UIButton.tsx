@@ -18,6 +18,7 @@ export enum UIButtonSize {
 type UIButtonProps = {
     type?: UIButtonType;
     size?: UIButtonSize;
+    disabled?: boolean;
     className?: string;
     children: React.ReactNode;
     onClick: () => void;
@@ -28,21 +29,25 @@ type UIButtonProps = {
 export const UIButton = ({
     type = UIButtonType.PRIMARY,
     size = UIButtonSize.MD,
+    disabled = false,
     className,
     children,
     onClick,
     "data-testid": dataTestId,
 }: UIButtonProps) => {
-    const UIButtonClasses = classNames(cls["ui-button"], {}, [
-        className,
-        cls[`type-${type}`],
-        cls[`size-${size}`],
-    ]);
+    const UIButtonClasses = classNames(
+        cls["ui-button"],
+        {
+            [cls["ui-button_disabled"]]: disabled,
+        },
+        [className, cls[`type-${type}`], cls[`size-${size}`]]
+    );
 
     return (
         <button
             data-testid={dataTestId}
             className={UIButtonClasses}
+            disabled={disabled}
             onClick={onClick}
         >
             {children}

@@ -1,0 +1,62 @@
+.ui-input {
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+    border-radius: 7px;
+    border: 2px solid transparent;
+    background-color: var(--input-background);
+    color: var(--input-color);
+    cursor: text;
+
+    &__clear-btn {
+        color: var(--input-color);
+    }
+
+    &__control {
+        width: 100%;
+        border: none;
+        background-color: var(--input-background);
+        color: inherit;
+
+        &:focus {
+            background-color: var(--input-background_focus);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &_disabled {
+        background-color: var(--input-background_disabled);
+        color: var(--input-color_disabled);
+        cursor: default;
+
+        & .ui-input__control {
+            background-color: var(--input-background_disabled);
+
+            &::placeholder {
+                color: var(--input-color_disabled);
+            }
+        }
+    }
+
+    &:focus,
+    &:focus-within {
+        border-color: var(--input-border-color_focus);
+        background-color: var(--input-background_focus);
+        color: var(--input-color_focus);
+
+        & .ui-input__control {
+            background-color: var(--input-background_focus);
+        }
+    }
+
+    &__addon_left,
+    &__addon_right,
+    button {
+        display: flex;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+}

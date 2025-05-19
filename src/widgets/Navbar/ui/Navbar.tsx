@@ -1,8 +1,8 @@
+import { LoginModal } from "features/AuthByUsername/ui/LoginModal/LoginModal";
 import { useCallback, useState } from "react";
 import UserIcon from "shared/assets/icons/UserIcon.svg";
 import { classNames } from "shared/lib/classNames/classNames";
 import { UIButton, UIButtonType } from "shared/ui/UIButton/UIButton";
-import { UIModal } from "shared/ui/UIModal/UIModal";
 import { LangSwitcher } from "widgets/LangSwitcher/ui/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import * as cls from "./Navbar.module.scss";
@@ -31,9 +31,7 @@ export const Navbar = ({ className }: NavbarProps) => {
             >
                 <UserIcon />
             </UIButton>
-            <UIModal isOpen={isAuthModal} onClose={onToggleAuthModal}>
-                123
-            </UIModal>
+            <LoginModal isOpen={isAuthModal} onClose={onToggleAuthModal} />
         </div>
     );
 };

@@ -1,12 +1,10 @@
 {
-  "save": "Сохранить",
-  "languageSwitcher": "EN",
-  "notFoundPage": "404. Страница не найдена.",
-  "unexpectedError": "Произошла непредвиденная ошибка.",
-  "updatePage": "",
-  "reloadPage": "Обновить страницу",
-  "translate": {
-    "bugButton": ""
-  },
-  "bugButton": "Кинь ошибку"
+    "save": "Сохранить",
+    "languageSwitcher": "EN",
+    "notFoundPage": "404. Страница не найдена.",
+    "unexpectedError": "Произошла непредвиденная ошибка.",
+    "updatePage": "",
+    "reloadPage": "Обновить страницу",
+    "bugButton": "Кинь ошибку",
+    "signIn": "Войти"
 }
