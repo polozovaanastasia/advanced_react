@@ -1,3 +1,5 @@
+import { Theme } from "shared/config/themeConfig/themeConfig";
+
 export const themeGlobalType = {
     theme: {
         name: "Theme",
@@ -6,8 +8,8 @@ export const themeGlobalType = {
         toolbar: {
             icon: "circlehollow",
             items: [
-                { value: "light", title: "Светлая" },
-                { value: "dark", title: "Тёмная" },
+                { value: Theme.LIGHT, title: "Светлая" },
+                { value: Theme.DARK, title: "Тёмная" },
             ],
             showName: true,
         },
