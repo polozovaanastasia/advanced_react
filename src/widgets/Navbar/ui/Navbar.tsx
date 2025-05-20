@@ -1,4 +1,4 @@
-import { LoginModal } from "features/AuthByUsername/ui/LoginModal/LoginModal";
+import { LoginModal } from "features/AuthByUsername";
 import { useCallback, useState } from "react";
 import UserIcon from "shared/assets/icons/UserIcon.svg";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -14,8 +14,12 @@ type NavbarProps = {
 export const Navbar = ({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const onToggleAuthModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseAuthModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowAuthModal = useCallback(() => {
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -27,11 +31,11 @@ export const Navbar = ({ className }: NavbarProps) => {
             <LangSwitcher />
             <UIButton
                 type={UIButtonType.ROUND_INVERTED}
-                onClick={onToggleAuthModal}
+                onClick={onShowAuthModal}
             >
                 <UserIcon />
             </UIButton>
-            <LoginModal isOpen={isAuthModal} onClose={onToggleAuthModal} />
+            <LoginModal isOpen={isAuthModal} onClose={onCloseAuthModal} />
         </div>
     );
 };

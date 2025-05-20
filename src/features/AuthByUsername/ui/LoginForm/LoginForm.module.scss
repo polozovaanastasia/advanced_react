@@ -1,3 +1,13 @@
 .login-form {
-    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 200px;
+    height: 250px;
+    margin-top: 20px;
+
+    &__submit-btn {
+        margin-top: auto;
+        margin-left: auto;
+    }
 }

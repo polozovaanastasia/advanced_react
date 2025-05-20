@@ -14,7 +14,13 @@ export enum UIModalSize {
 type UIModalProps = {
     isOpen: boolean;
     size?: UIModalSize;
+    withCloseButton?: boolean;
     onClose: () => void;
+    children: React.ReactNode;
+    className?: string;
+};
+
+type UIModalSectionPropsType = {
     children: React.ReactNode;
     className?: string;
 };
@@ -23,7 +29,8 @@ const ANIMATION_DELAY = 200;
 
 export const UIModal = ({
     isOpen,
-    size = UIModalSize.MD,
+    size,
+    withCloseButton = true,
     onClose,
     children,
     className,
@@ -80,14 +87,16 @@ export const UIModal = ({
                     className={classNames(cls["ui-modal__content"])}
                     onClick={onContentClick}
                 >
-                    <UIButton
-                        className={classNames(cls["ui-modal__close-btn"])}
-                        type={UIButtonType.ICON}
-                        size={UIButtonSize.S}
-                        onClick={onCloseHandler}
-                    >
-                        <CrossIcon />
-                    </UIButton>
+                    {withCloseButton && (
+                        <UIButton
+                            className={classNames(cls["ui-modal__close-btn"])}
+                            type={UIButtonType.ICON}
+                            size={UIButtonSize.S}
+                            onClick={onCloseHandler}
+                        >
+                            <CrossIcon />
+                        </UIButton>
+                    )}
                     {children}
                 </div>
             </div>
@@ -99,3 +108,30 @@ export const UIModal = ({
 
     return <Portal element={modalsRoot}>{modal}</Portal>;
 };
+
+const UIModalHeader = ({ className, children }: UIModalSectionPropsType) => {
+    return (
+        <div className={classNames(cls["ui-modal__header"], {}, [className])}>
+            {children}
+        </div>
+    );
+};
+UIModal.Header = UIModalHeader;
+
+const UIModalBody = ({ className, children }: UIModalSectionPropsType) => {
+    return (
+        <div className={classNames(cls["ui-modal__body"], {}, [className])}>
+            {children}
+        </div>
+    );
+};
+UIModal.Body = UIModalBody;
+
+const UIModalFooter = ({ className, children }: UIModalSectionPropsType) => {
+    return (
+        <div className={classNames(cls["ui-modal__footer"], {}, [className])}>
+            {children}
+        </div>
+    );
+};
+UIModal.Footer = UIModalFooter;

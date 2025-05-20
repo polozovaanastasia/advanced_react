@@ -6,5 +6,6 @@
   "reloadPage": "Reload page",
   "updatePage": "",
   "bugButton": "Throw Error",
-  "signIn": "Sign In"
+  "signIn": "Sign In",
+  "authModalTitle": "Sign In to App"
 }

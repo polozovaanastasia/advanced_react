@@ -14,6 +14,9 @@
 
     &__content {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
         padding: 40px 45px;
         border-radius: 20px;
         background-color: var(--bg-color);
@@ -61,5 +64,11 @@
             width: 940px;
             min-height: 620px;
         }
+    }
+
+    &__header,
+    &__body,
+    &__footer {
+        color: inherit;
     }
 }
