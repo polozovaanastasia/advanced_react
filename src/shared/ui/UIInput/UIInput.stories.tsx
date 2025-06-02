@@ -32,7 +32,6 @@ export const DefaultWithClear: Story = {
         value: "",
         variant: UIInputVariant.DEFAULT,
         allowClear: true,
-        onClear: () => {},
         onChange: () => {},
     },
 };

@@ -24,7 +24,7 @@ type UIInputProps = (UIInputWithClear | UIInputWithoutClear) & {
 
 type UIInputWithClear = {
     allowClear: true;
-    onClear: () => void;
+    onClear?: () => void;
 };
 
 type UIInputWithoutClear = {
@@ -58,6 +58,12 @@ export const UIInput = memo(
         const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
             onChange(event.target.value);
         };
+
+        const onClearHandler = () => {
+            if (onClear) onClear();
+            onChange("");
+        };
+
         return (
             <div className={UIInputClasses}>
                 {addonLeft && (
@@ -96,7 +102,7 @@ export const UIInput = memo(
                         size={UIButtonSize.S}
                         disabled={disabled}
                         className={cls["ui-input__clear-btn"]}
-                        onClick={onClear}
+                        onClick={onClearHandler}
                     >
                         <CrossIcon />
                     </UIButton>

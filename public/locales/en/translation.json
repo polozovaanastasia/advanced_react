@@ -7,5 +7,7 @@
   "updatePage": "",
   "bugButton": "Throw Error",
   "signIn": "Sign In",
-  "authModalTitle": "Sign In to App"
+  "authModalTitle": "Sign In to App",
+  "authUsernamePlaceholder": "Enter username",
+  "authPasswordPlaceholder": "Enter password"
 }

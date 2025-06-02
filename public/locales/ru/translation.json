@@ -7,5 +7,7 @@
   "reloadPage": "Обновить страницу",
   "bugButton": "Кинь ошибку",
   "signIn": "Войти",
-  "authModalTitle": "Войти в App"
+  "authModalTitle": "Войти в App",
+  "authUsernamePlaceholder": "Введите имя пользователя",
+  "authPasswordPlaceholder": "Введите пароль"
 }

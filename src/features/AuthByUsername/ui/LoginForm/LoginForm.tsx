@@ -1,42 +1,47 @@
-import { useState } from "react";
+import { getLoginState } from "features/AuthByUsername/model/selectors/getLoginState/getLoginState";
+import { loginActions } from "features/AuthByUsername/model/slice/loginSlice";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
 import { UIButton } from "shared/ui/UIButton/UIButton";
 import { UIInput, UIInputVariant } from "shared/ui/UIInput/UIInput";
 import * as cls from "./LoginForm.module.scss";
 
-// type LoginFormProps = {};
+type LoginFormProps = {
+    className?: string;
+};
 
-export const LoginForm = () => {
-    const { t } = useTranslation("main");
+export const LoginFormComponent = ({ className }: LoginFormProps) => {
+    const { t } = useTranslation();
+    const dispatch = useDispatch();
+    const { username, password } = useSelector(getLoginState);
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const onChangeUsername = useCallback((value: string) => {
+        dispatch(loginActions.setUsername(value));
+    }, []);
+
+    const onChangePassword = useCallback((value: string) => {
+        dispatch(loginActions.setPassword(value));
+    }, []);
 
     return (
-        <div className={classNames(cls["login-form"], {}, [])}>
+        <div className={classNames(cls["login-form"], {}, [className])}>
             <UIInput
                 value={username}
-                placeholder="username"
+                placeholder={t("translation:authUsernamePlaceholder")}
                 variant={UIInputVariant.FLOATING}
                 allowClear
-                onChange={(username) => {
-                    setUsername(username);
-                }}
+                onChange={onChangeUsername}
                 onClear={() => {
-                    setUsername("");
+                    console.log("Cleaning from parent");
                 }}
             />
             <UIInput
                 value={password}
-                placeholder="password"
+                placeholder={t("translation:authPasswordPlaceholder")}
                 allowClear
-                onChange={(password) => {
-                    setPassword(password);
-                }}
-                onClear={() => {
-                    setPassword("");
-                }}
+                onChange={onChangePassword}
             />
             <UIButton
                 className={cls["login-form__submit-btn"]}
@@ -49,3 +54,5 @@ export const LoginForm = () => {
         </div>
     );
 };
+
+export const LoginForm = memo(LoginFormComponent);
