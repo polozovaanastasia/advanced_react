@@ -21,9 +21,18 @@ const loginSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(loginByUsername.pending, () => {})
-            .addCase(loginByUsername.fulfilled, () => {})
-            .addCase(loginByUsername.rejected, () => {});
+            .addCase(loginByUsername.pending, (state) => {
+                state.error = undefined;
+                state.isLoading = true;
+            })
+            .addCase(loginByUsername.fulfilled, (state) => {
+                state.error = undefined;
+                state.isLoading = false;
+            })
+            .addCase(loginByUsername.rejected, (state, action) => {
+                state.error = action.payload;
+                state.isLoading = false;
+            });
     },
 });
 

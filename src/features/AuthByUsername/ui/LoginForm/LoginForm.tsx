@@ -1,4 +1,6 @@
+import { AppDispatch } from "app/providers/storeProvider/config/store";
 import { getLoginState } from "features/AuthByUsername/model/selectors/getLoginState/getLoginState";
+import { loginByUsername } from "features/AuthByUsername/model/services/loginByUsername/loginByUsername";
 import { loginActions } from "features/AuthByUsername/model/slice/loginSlice";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,7 +16,7 @@ type LoginFormProps = {
 
 export const LoginFormComponent = ({ className }: LoginFormProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     const { username, password } = useSelector(getLoginState);
 
     const onChangeUsername = useCallback((value: string) => {
@@ -24,6 +26,10 @@ export const LoginFormComponent = ({ className }: LoginFormProps) => {
     const onChangePassword = useCallback((value: string) => {
         dispatch(loginActions.setPassword(value));
     }, []);
+
+    const onLoginClick = useCallback(() => {
+        dispatch(loginByUsername({ username, password }));
+    }, [username, password]);
 
     return (
         <div className={classNames(cls["login-form"], {}, [className])}>
@@ -45,9 +51,7 @@ export const LoginFormComponent = ({ className }: LoginFormProps) => {
             />
             <UIButton
                 className={cls["login-form__submit-btn"]}
-                onClick={() => {
-                    console.log("Sign In");
-                }}
+                onClick={onLoginClick}
             >
                 {t("translation:signIn")}
             </UIButton>

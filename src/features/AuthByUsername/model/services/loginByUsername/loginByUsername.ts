@@ -7,7 +7,13 @@ type loginByUsernameProps = {
     password: string;
 };
 
-export const loginByUsername = createAsyncThunk<User, loginByUsernameProps>(
+export const loginByUsername = createAsyncThunk<
+    User,
+    loginByUsernameProps,
+    {
+        rejectValue: string;
+    }
+>(
     "login/loginByUsername",
     async ({ username, password }, { rejectWithValue }) => {
         try {
@@ -22,8 +28,14 @@ export const loginByUsername = createAsyncThunk<User, loginByUsernameProps>(
                 throw new Error();
             }
             return response.data;
-        } catch (error) {
-            return rejectWithValue(error);
+        } catch (err) {
+            let message = "Неизвестная ошибка";
+
+            if (err instanceof Error) {
+                message = err.message;
+            }
+
+            return rejectWithValue(message);
         }
     }
 );
