@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import * as cls from "./UILoader.module.scss";
 
 export enum UILoaderSize {
-    LG = "lg",
+    // LG = "lg",
     MD = "md",
     S = "s",
 }

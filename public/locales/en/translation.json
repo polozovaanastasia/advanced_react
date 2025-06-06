@@ -1,13 +1,14 @@
 {
-  "save": "Save",
-  "languageSwitcher": "RU",
-  "notFoundPage": "404. Page not found.",
-  "unexpectedError": "An unexpected error occurred.",
-  "reloadPage": "Reload page",
-  "updatePage": "",
-  "bugButton": "Throw Error",
-  "signIn": "Sign In",
-  "authModalTitle": "Sign In to App",
-  "authUsernamePlaceholder": "Enter username",
-  "authPasswordPlaceholder": "Enter password"
+    "save": "Save",
+    "languageSwitcher": "RU",
+    "notFoundPage": "404. Page not found.",
+    "unexpectedError": "An unexpected error occurred.",
+    "reloadPage": "Reload page",
+    "updatePage": "",
+    "bugButton": "Throw Error",
+    "signIn": "Sign In",
+    "authModalTitle": "Sign In to App",
+    "authUsernamePlaceholder": "Enter username",
+    "authPasswordPlaceholder": "Enter password",
+    "authIncorrectError": "Incorrect username or password."
 }

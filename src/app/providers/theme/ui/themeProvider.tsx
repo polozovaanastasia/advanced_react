@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import {
-    LOCAL_STORAGE_THEME_KEY,
-    Theme,
-} from "shared/config/themeConfig/themeConfig";
+import { Theme } from "shared/config/themeConfig/themeConfig";
+import { LOCAL_STORAGE_THEME_KEY } from "shared/const/localstorage";
 import { ThemeContext } from "../lib/themeContext";
 
 type ThemeProviderType = {

@@ -1,5 +1,6 @@
 import { changeLanguage } from "i18next";
 import { useTranslation } from "react-i18next";
+import { LOCAL_STORAGE_LANG_KEY } from "shared/const/localstorage";
 import { classNames } from "shared/lib/classNames/classNames";
 import { UIButton, UIButtonType } from "shared/ui/UIButton/UIButton";
 import * as cls from "./LangSwitcher.module.scss";
@@ -11,7 +12,6 @@ type LangSwitcherProps = {
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
-    const LOCAL_STORAGE_LANG_KEY = "lang";
     const toggleLanguage = () => {
         const newLang = i18n.language === "ru" ? "en" : "ru";
         changeLanguage(newLang);

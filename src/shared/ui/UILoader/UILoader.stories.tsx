@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { UILoader } from "./UILoader";
+import { UILoader, UILoaderSize } from "./UILoader";
 
 const meta = {
     title: "shared/UILoader",
@@ -9,7 +9,12 @@ const meta = {
         layout: "centered",
     },
     tags: ["autodocs"],
-    argTypes: {},
+    argTypes: {
+        size: {
+            control: "select",
+            options: Object.values(UILoaderSize),
+        },
+    },
     args: {},
 } satisfies Meta<typeof UILoader>;
 
