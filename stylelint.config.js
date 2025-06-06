@@ -5,5 +5,6 @@ export default {
     rules: {
         "custom-property-pattern": null,
         "selector-class-pattern": null,
+        "no-descending-specificity": null,
     },
 };

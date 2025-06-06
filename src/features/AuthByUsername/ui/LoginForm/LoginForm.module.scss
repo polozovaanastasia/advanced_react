@@ -10,4 +10,9 @@
         margin-top: auto;
         margin-left: auto;
     }
+
+    &_is-loading {
+        align-items: center;
+        justify-content: center;
+    }
 }
