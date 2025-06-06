@@ -8,14 +8,18 @@ const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        setAuthDate(state, action: PayloadAction<User>) {
-            state.authDate = action.payload;
+        setAuthData(state, action: PayloadAction<User>) {
+            state.authData = action.payload;
         },
-        initAuthDate(state) {
+        initAuthData(state) {
             const user = localStorage.getItem(LOCAL_STORAGE_USER_KEY);
             if (user) {
-                state.authDate = JSON.parse(user);
+                state.authData = JSON.parse(user);
             }
+        },
+        logout(state) {
+            state.authData = undefined;
+            localStorage.removeItem(LOCAL_STORAGE_USER_KEY);
         },
     },
 });

@@ -4,5 +4,5 @@ export type User = {
 };
 
 export type UserSchema = {
-    authDate?: User;
+    authData?: User;
 };
