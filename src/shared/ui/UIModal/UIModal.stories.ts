@@ -4,24 +4,16 @@ import { UIModal, UIModalSize } from "./UIModal";
 const meta = {
     title: "shared/UIModal",
     component: UIModal,
-    parameters: {
-        layout: "centered",
-    },
     tags: ["autodocs"],
+    parameters: {
+        layout: "fullscreen",
+    },
     argTypes: {
-        // type: {
-        //     control: "select",
-        //     options: Object.values(UIButtonType),
-        // },
         size: {
             control: "select",
             options: Object.values(UIModalSize),
         },
-        children: {
-            control: "text",
-        },
     },
-    // args: { onClick: () => alert("Button clicked!"), children: "Button" },
 } satisfies Meta<typeof UIModal>;
 
 export default meta;

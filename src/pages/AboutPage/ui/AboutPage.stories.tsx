@@ -4,12 +4,10 @@ import AboutPage from "./AboutPage";
 const meta = {
     title: "pages/AboutPage",
     component: AboutPage,
-    parameters: {
-        layout: "centered",
-    },
     tags: ["autodocs"],
-    argTypes: {},
-    args: {},
+    parameters: {
+        layout: "fullscreen",
+    },
 } satisfies Meta<typeof AboutPage>;
 
 export default meta;

@@ -22,6 +22,7 @@ type UIButtonProps = {
     className?: string;
     children: React.ReactNode;
     onClick: () => void;
+    onMouseEnter?: () => void;
 
     "data-testid"?: string;
 };
@@ -33,6 +34,7 @@ export const UIButton = ({
     className,
     children,
     onClick,
+    onMouseEnter,
     "data-testid": dataTestId,
 }: UIButtonProps) => {
     const UIButtonClasses = classNames(
@@ -49,6 +51,7 @@ export const UIButton = ({
             className={UIButtonClasses}
             disabled={disabled}
             onClick={onClick}
+            onMouseEnter={onMouseEnter}
         >
             {children}
         </button>

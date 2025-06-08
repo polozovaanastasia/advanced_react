@@ -1,21 +1,30 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator/StoreDecorator";
 import { Navbar } from "./Navbar";
+
+console.log(StoreDecorator);
 
 const meta = {
     title: "widgets/Navbar",
     component: Navbar,
-    parameters: {
-        layout: "centered",
-    },
     tags: ["autodocs"],
-    argTypes: {},
-    args: {},
+    parameters: {
+        layout: "fullscreen",
+    },
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
+                    id: 1,
+                    username: "username",
+                },
+            },
+        }),
+    ],
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    args: {},
-};
+export const Default: Story = {};

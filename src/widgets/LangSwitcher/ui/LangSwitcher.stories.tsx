@@ -5,17 +5,13 @@ import { LangSwitcher } from "./LangSwitcher";
 const meta = {
     title: "widgets/LangSwitcher",
     component: LangSwitcher,
-    parameters: {
-        layout: "centered",
-    },
     tags: ["autodocs"],
-    argTypes: {},
-    args: {},
+    parameters: {
+        layout: "fullscreen",
+    },
 } satisfies Meta<typeof LangSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    args: {},
-};
+export const Default: Story = {};

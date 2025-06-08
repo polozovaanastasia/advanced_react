@@ -4,10 +4,13 @@ import { UIInput, UIInputVariant } from "./UIInput";
 const meta = {
     title: "shared/UIInput",
     component: UIInput,
-    parameters: {
-        layout: "centered",
-    },
     tags: ["autodocs"],
+    parameters: {
+        layout: "fullscreen",
+    },
+    args: {
+        onChange: () => {},
+    },
     argTypes: {
         variant: {
             control: "select",
@@ -21,17 +24,15 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultWithoutClear: Story = {
     args: {
-        value: "",
+        value: "Hello",
         variant: UIInputVariant.DEFAULT,
-        onChange: () => {},
     },
 };
 
 export const DefaultWithClear: Story = {
     args: {
-        value: "",
+        value: "Hello",
         variant: UIInputVariant.DEFAULT,
         allowClear: true,
-        onChange: () => {},
     },
 };

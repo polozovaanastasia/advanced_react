@@ -43,6 +43,7 @@ export default defineConfig([
                 },
             ],
             "no-console": "warn",
+            "react/display-name": "off",
             eqeqeq: "warn",
         },
     },

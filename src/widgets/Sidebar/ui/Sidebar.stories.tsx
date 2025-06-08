@@ -5,17 +5,13 @@ import { Sidebar } from "./Sidebar";
 const meta = {
     title: "widgets/Sidebar",
     component: Sidebar,
-    parameters: {
-        layout: "centered",
-    },
     tags: ["autodocs"],
-    argTypes: {},
-    args: {},
+    parameters: {
+        layout: "fullscreen",
+    },
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    args: {},
-};
+export const Default: Story = {};

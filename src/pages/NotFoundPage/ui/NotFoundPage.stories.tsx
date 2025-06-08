@@ -5,12 +5,10 @@ import { NotFoundPage } from "./NotFoundPage";
 const meta = {
     title: "pages/NotFoundPage",
     component: NotFoundPage,
-    parameters: {
-        layout: "centered",
-    },
     tags: ["autodocs"],
-    argTypes: {},
-    args: {},
+    parameters: {
+        layout: "fullscreen",
+    },
 } satisfies Meta<typeof NotFoundPage>;
 
 export default meta;

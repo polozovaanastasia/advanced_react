@@ -11,7 +11,7 @@ import { UIInput, UIInputVariant } from "shared/ui/UIInput/UIInput";
 import { UILoader, UILoaderSize } from "shared/ui/UILoader/UILoader";
 import * as cls from "./LoginForm.module.scss";
 
-type LoginFormProps = {
+export type LoginFormProps = {
     className?: string;
 };
 
