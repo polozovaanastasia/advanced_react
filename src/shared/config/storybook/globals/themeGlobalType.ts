@@ -4,7 +4,7 @@ export const themeGlobalType = {
     theme: {
         name: "Theme",
         description: "Тема",
-        defaultValue: "light",
+        defaultValue: Theme.LIGHT,
         toolbar: {
             icon: "circlehollow",
             items: [

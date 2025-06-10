@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { UIButton, UIButtonType } from "./UIButton";
+import { UIButton, UIButtonSize, UIButtonType } from "./UIButton";
 
 const meta: Meta<typeof UIButton> = {
     title: "shared/UIButton",
@@ -9,39 +9,16 @@ const meta: Meta<typeof UIButton> = {
     parameters: {
         actions: { argTypesRegex: "^on.*" },
         layout: "fullscreen",
-        viewport: {
-            defaultViewport: "iphone6",
-            viewports: {
-                iphone6: {
-                    name: "iPhone 6",
-                    styles: {
-                        width: "375px",
-                        height: "667px",
-                    },
-                    type: "mobile",
-                },
-                ipad: {
-                    name: "iPad",
-                    styles: {
-                        width: "768px",
-                        height: "1024px",
-                    },
-                    type: "tablet",
-                },
-            },
-        },
-        // controls: { include: ["size", "type"] },
     },
-    // argTypes: {
-    //     size: {
-    //         control: "select",
-    //         options: Object.values(UIButtonSize),
-    //     },
-    //     children: {
-    //         control: "text",
-    //     },
-    // },
-    // args: { onClick: () => alert("Button clicked!"), children: "Button" },
+    argTypes: {
+        size: {
+            control: "select",
+            options: Object.values(UIButtonSize),
+        },
+        children: {
+            control: "text",
+        },
+    },
 };
 
 export default meta;
