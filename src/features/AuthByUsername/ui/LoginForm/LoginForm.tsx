@@ -49,12 +49,7 @@ export const LoginFormComponent = ({ className }: LoginFormProps) => {
             )}
         >
             {error && <div className={cls["login-form__error"]}>{error}</div>}
-            {isLoading && (
-                <UILoader
-                    size={UILoaderSize.S}
-                    className={cls["login-form__loader"]}
-                />
-            )}
+            {isLoading && <UILoader size={UILoaderSize.S} />}
             {!isLoading && (
                 <>
                     <UIInput
@@ -88,4 +83,4 @@ export const LoginFormComponent = ({ className }: LoginFormProps) => {
     );
 };
 
-export const LoginForm = memo(LoginFormComponent);
+export default memo(LoginFormComponent);

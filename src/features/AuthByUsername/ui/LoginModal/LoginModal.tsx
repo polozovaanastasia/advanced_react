@@ -1,6 +1,8 @@
+import { LoginForm } from "features/AuthByUsername";
+import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
+import { UILoader, UILoaderSize } from "shared/ui/UILoader/UILoader";
 import { UIModal } from "shared/ui/UIModal/UIModal";
-import { LoginForm } from "../LoginForm/LoginForm";
 import * as cls from "./LoginModal.module.scss";
 
 type LoginModalProps = {
@@ -21,8 +23,10 @@ export const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
             <UIModal.Header className={cls["login-modal__header"]}>
                 {t("translation:authModalTitle")}
             </UIModal.Header>
-            <UIModal.Body>
-                <LoginForm />
+            <UIModal.Body className={cls["login-modal__body"]}>
+                <Suspense fallback={<UILoader size={UILoaderSize.S} />}>
+                    <LoginForm />
+                </Suspense>
             </UIModal.Body>
         </UIModal>
     );
