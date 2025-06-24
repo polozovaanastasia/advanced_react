@@ -4,6 +4,6 @@ export const LoginFormLazy = lazy(
     () =>
         new Promise((resolve) => {
             // @ts-expect-error - временно, чтобы видеть лоадер.
-            setTimeout(() => resolve(import("./LoginForm")), 15000);
+            setTimeout(() => resolve(import("./LoginForm")), 5000);
         })
 );
