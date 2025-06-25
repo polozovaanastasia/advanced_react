@@ -3,26 +3,40 @@ import {
     ReduxStoreWithManager,
     StateSchemaKey,
 } from "app/providers/storeProvider/config/StateSchema";
+import { AppDispatch } from "app/providers/storeProvider/config/store";
 import { useEffect } from "react";
-import { useStore } from "react-redux";
+import { useDispatch, useStore } from "react-redux";
+
+export type ReducersList = {
+    [name in StateSchemaKey]?: Reducer;
+};
+
+type ReducersListEntry = [StateSchemaKey, Reducer];
 
 type DynamicModuleLoaderProps = {
-    name: StateSchemaKey;
-    reducer: Reducer;
+    reducers: ReducersList;
     children: React.ReactNode;
 };
 
 export const DynamicModuleLoader = ({
-    name,
-    reducer,
+    reducers,
     children,
 }: DynamicModuleLoaderProps) => {
+    const dispatch = useDispatch<AppDispatch>();
     const store = useStore() as ReduxStoreWithManager;
     useEffect(() => {
-        store.reducerManager.add(name, reducer);
+        Object.entries(reducers).forEach((entry) => {
+            const [name, reducer] = entry as ReducersListEntry;
+            store.reducerManager.add(name, reducer);
+            dispatch({ type: `@INIT ${name} reducer` });
+        });
         return () => {
-            store.reducerManager.remove(name);
+            Object.entries(reducers).forEach((entry) => {
+                const [name] = entry as ReducersListEntry;
+                store.reducerManager.remove(name);
+                dispatch({ type: `@DESTROY ${name} reducer` });
+            });
         };
     }, []);
-    return <>{children}</>;
+    return <> {children} </>;
 };

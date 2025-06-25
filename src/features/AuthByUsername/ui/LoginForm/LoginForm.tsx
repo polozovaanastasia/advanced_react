@@ -12,7 +12,10 @@ import { memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
-import { DynamicModuleLoader } from "shared/lib/components/DynamicModuleLoader";
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from "shared/lib/components/DynamicModuleLoader";
 import { UIButton } from "shared/ui/UIButton/UIButton";
 import { UIInput, UIInputVariant } from "shared/ui/UIInput/UIInput";
 import { UILoader, UILoaderSize } from "shared/ui/UILoader/UILoader";
@@ -22,10 +25,13 @@ export type LoginFormProps = {
     className?: string;
 };
 
+const initialReducers: ReducersList = {
+    loginForm: loginReducer,
+};
+
 export const LoginFormComponent = ({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch<AppDispatch>();
-    // const store = useStore() as ReduxStoreWithManager;
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
@@ -53,7 +59,7 @@ export const LoginFormComponent = ({ className }: LoginFormProps) => {
     }, [username, password]);
 
     return (
-        <DynamicModuleLoader name="loginForm" reducer={loginReducer}>
+        <DynamicModuleLoader reducers={initialReducers}>
             <div
                 className={classNames(
                     cls["login-form"],
