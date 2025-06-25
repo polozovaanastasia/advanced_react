@@ -1,4 +1,3 @@
-import { ReduxStoreWithManager } from "app/providers/storeProvider";
 import { AppDispatch } from "app/providers/storeProvider/config/store";
 import { getLoginError } from "features/AuthByUsername/model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading";
@@ -11,8 +10,9 @@ import {
 } from "features/AuthByUsername/model/slice/loginSlice";
 import { memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
+import { DynamicModuleLoader } from "shared/lib/components/DynamicModuleLoader";
 import { UIButton } from "shared/ui/UIButton/UIButton";
 import { UIInput, UIInputVariant } from "shared/ui/UIInput/UIInput";
 import { UILoader, UILoaderSize } from "shared/ui/UILoader/UILoader";
@@ -25,7 +25,7 @@ export type LoginFormProps = {
 export const LoginFormComponent = ({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch<AppDispatch>();
-    const store = useStore() as ReduxStoreWithManager;
+    // const store = useStore() as ReduxStoreWithManager;
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
@@ -33,10 +33,11 @@ export const LoginFormComponent = ({ className }: LoginFormProps) => {
     const error = useSelector(getLoginError);
 
     useEffect(() => {
-        import("../../model/slice/loginSlice").then(() => {
-            store.reducerManager.add("loginForm", loginReducer);
-            store.replaceReducer(store.reducerManager.reduce);
-        });
+        return () => {
+            dispatch(loginActions.setUsername(""));
+            dispatch(loginActions.setPassword(""));
+            dispatch(loginActions.setError(undefined));
+        };
     }, []);
 
     const onChangeUsername = useCallback((value: string) => {
@@ -51,54 +52,54 @@ export const LoginFormComponent = ({ className }: LoginFormProps) => {
         dispatch(loginByUsername({ username, password }));
     }, [username, password]);
 
-    useEffect(() => {
-        return () => {
-            dispatch(loginActions.setUsername(""));
-            dispatch(loginActions.setPassword(""));
-            dispatch(loginActions.setError(undefined));
-        };
-    }, []);
-
     return (
-        <div
-            className={classNames(
-                cls["login-form"],
-                { [cls["login-form_is-loading"]]: true },
-                [className]
-            )}
-        >
-            {error && <div className={cls["login-form__error"]}>{error}</div>}
-            {isLoading && <UILoader size={UILoaderSize.S} />}
-            {!isLoading && (
-                <>
-                    <UIInput
-                        className={cls["login-form__input"]}
-                        value={username}
-                        placeholder={t("translation:authUsernamePlaceholder")}
-                        variant={UIInputVariant.FLOATING}
-                        allowClear
-                        onChange={onChangeUsername}
-                        onClear={() => {
-                            console.log("Cleaning from parent");
-                        }}
-                    />
-                    <UIInput
-                        className={cls["login-form__input"]}
-                        value={password}
-                        placeholder={t("translation:authPasswordPlaceholder")}
-                        variant={UIInputVariant.FLOATING}
-                        allowClear
-                        onChange={onChangePassword}
-                    />
-                    <UIButton
-                        className={cls["login-form__submit-btn"]}
-                        onClick={onLoginClick}
-                    >
-                        {t("translation:signIn")}
-                    </UIButton>
-                </>
-            )}
-        </div>
+        <DynamicModuleLoader name="loginForm" reducer={loginReducer}>
+            <div
+                className={classNames(
+                    cls["login-form"],
+                    { [cls["login-form_is-loading"]]: true },
+                    [className]
+                )}
+            >
+                {error && (
+                    <div className={cls["login-form__error"]}>{error}</div>
+                )}
+                {isLoading && <UILoader size={UILoaderSize.S} />}
+                {!isLoading && (
+                    <>
+                        <UIInput
+                            className={cls["login-form__input"]}
+                            value={username}
+                            placeholder={t(
+                                "translation:authUsernamePlaceholder"
+                            )}
+                            variant={UIInputVariant.FLOATING}
+                            allowClear
+                            onChange={onChangeUsername}
+                            onClear={() => {
+                                console.log("Cleaning from parent");
+                            }}
+                        />
+                        <UIInput
+                            className={cls["login-form__input"]}
+                            value={password}
+                            placeholder={t(
+                                "translation:authPasswordPlaceholder"
+                            )}
+                            variant={UIInputVariant.FLOATING}
+                            allowClear
+                            onChange={onChangePassword}
+                        />
+                        <UIButton
+                            className={cls["login-form__submit-btn"]}
+                            onClick={onLoginClick}
+                        >
+                            {t("translation:signIn")}
+                        </UIButton>
+                    </>
+                )}
+            </div>
+        </DynamicModuleLoader>
     );
 };
 
