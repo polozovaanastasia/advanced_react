@@ -19,17 +19,17 @@ export function createReducerManager(
             if (!state) {
                 return combinedReducer(undefined, action);
             }
-            let newState = state;
+            let copyState = state;
             if (keysToRemove.length > 0) {
-                newState = { ...newState };
+                copyState = { ...copyState };
                 keysToRemove.forEach((key) => {
-                    delete newState[key];
+                    delete copyState[key];
                 });
                 keysToRemove = [];
             }
 
             return combinedReducer(
-                newState as ReturnType<typeof combinedReducer>,
+                copyState as ReturnType<typeof combinedReducer>,
                 action
             );
         },

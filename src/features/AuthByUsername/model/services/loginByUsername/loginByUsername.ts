@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { User, userActions } from "entities/User";
-import i18n from "shared/config/i18n/i18nForStorybook";
+import i18n from "i18next";
 import { LOCAL_STORAGE_USER_KEY } from "shared/const/localstorage";
 
 type loginByUsernameProps = {
@@ -34,7 +34,10 @@ export const loginByUsername = createAsyncThunk<
 
         return response.data;
     } catch (error) {
+        // eslint-disable-next-line
         console.log(error);
         return thunkAPI.rejectWithValue(i18n.t("authIncorrectError"));
     }
 });
+// "authIncorrectError": "Incorrect username or password."
+// "authIncorrectError": "Некорректное имя пользователя или пароль."

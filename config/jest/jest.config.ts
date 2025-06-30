@@ -20,11 +20,15 @@ const config: Config = {
         "^.+\\.(ts|tsx)$": "ts-jest",
     },
     moduleNameMapper: {
-        // "\\.(css|less|scss|sass)$": "identity-obj-proxy",
         "\\.module\\.(css|scss)$":
             "<rootDir>/config/jest/__mocks__/styleMock.ts",
         "\\.svg$": "<rootDir>/config/jest/__mocks__/emptyComponent.tsx",
         "\\.(mp4|mp3|webm)$": "<rootDir>/config/jest/__mocks__/fileMock.ts",
+        "^entities/(.*)$": "<rootDir>/src/entities/$1",
+        "^features/(.*)$": "<rootDir>/src/features/$1",
+        "^pages/(.*)$": "<rootDir>/src/pages/$1",
+        "^shared/(.*)$": "<rootDir>/src/shared/$1",
+        "^widgets/(.*)$": "<rootDir>/src/widgets/$1",
     },
 
     modulePaths: ["<rootDir>/src"],
