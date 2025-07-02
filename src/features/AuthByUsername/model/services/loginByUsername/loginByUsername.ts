@@ -35,7 +35,7 @@ export const loginByUsername = createAsyncThunk<
         return response.data;
     } catch (error) {
         // eslint-disable-next-line
-        console.log(error);
+        console.log("Error: ", error);
         return thunkAPI.rejectWithValue(i18n.t("authIncorrectError"));
     }
 });
