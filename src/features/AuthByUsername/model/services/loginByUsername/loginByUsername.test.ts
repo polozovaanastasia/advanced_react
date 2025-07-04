@@ -27,7 +27,6 @@ describe("getLoginPassword", () => {
         });
         const action = await thunkAC(dispatch, getState, undefined);
 
-        // console.log(action);
         expect(mockedAxios.post).toHaveBeenCalled();
         expect(action.meta.requestStatus).toBe("fulfilled");
         expect(action.payload).toEqual(userData);

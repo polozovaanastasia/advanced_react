@@ -41,6 +41,12 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+        "first": "Anastasia",
+        "lastname": "Polozova",
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Ekaterinburg",
+        "username": "admin",
+        "avatar": "url"
     }
 }

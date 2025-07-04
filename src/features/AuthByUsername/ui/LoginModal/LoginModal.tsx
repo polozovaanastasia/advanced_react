@@ -25,7 +25,7 @@ export const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
             </UIModal.Header>
             <UIModal.Body className={cls["login-modal__body"]}>
                 <Suspense fallback={<UILoader size={UILoaderSize.S} />}>
-                    <LoginForm />
+                    <LoginForm onSuccess={onClose} />
                 </Suspense>
             </UIModal.Body>
         </UIModal>

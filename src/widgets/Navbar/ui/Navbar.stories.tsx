@@ -3,8 +3,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator/StoreDecorator";
 import { Navbar } from "./Navbar";
 
-console.log(StoreDecorator);
-
 const meta = {
     title: "widgets/Navbar",
     component: Navbar,
@@ -16,7 +14,7 @@ const meta = {
         StoreDecorator({
             user: {
                 authData: {
-                    id: 1,
+                    id: "1",
                     username: "username",
                 },
             },
